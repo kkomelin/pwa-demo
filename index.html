@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PWA Demo for DrupalCamp Krasnodar 2017</title>
+
+    <script type="application/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('Service worker registration succeeded:', registration.scope);
+            }).catch(function(error) {
+                console.log('Service worker registration failed:', error);
+            });
+        } else {
+            console.log('Service workers are not supported.');
+        }
+    </script>
+</head>
+<body>
+    <h2>PWA Demo for DrupalCamp Krasnodar 2017</h2>
+
+    <img src="http://2017.drupalyug.ru/sites/all/themes/camp/img/yug-logo-bigg.png" alt="DrupalCamp Krasnodar 2017 Logo" />
+</body>
+</html>
