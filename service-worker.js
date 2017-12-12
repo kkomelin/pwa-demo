@@ -5,9 +5,8 @@
 
     var filesToCache = [
         '.',
-        'index.html',
         'styles/style.css',
-        'favicon.ico',
+        'images/favicon.ico',
         'images/offline.svg' // An offline replacement for the remote image.
     ];
 
