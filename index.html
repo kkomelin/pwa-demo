@@ -6,8 +6,10 @@
     <title>PWA Demo for DrupalCamp Krasnodar 2017</title>
 
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css" rel="preload" />
     <link rel="icon" href="images/favicon.ico">
+
+    <meta name="theme-color" content="#1f2c79">
 
     <script type="application/javascript">
         if ('serviceWorker' in navigator) {
@@ -26,7 +28,7 @@
     <header>
         <h1>Time to go offline!</h1>
         <p>
-            <a target="_blank" href="https://kkomelin.github.io/pwa-demo/" class="app-link">kkomelin.github.io/pwa-demo</a>
+            <a target="_blank" rel="noopener" href="https://kkomelin.github.io/pwa-demo/" class="app-link">kkomelin.github.io/pwa-demo</a>
         </p>
     </header>
 
@@ -36,10 +38,10 @@
 
     <footer>
         <div class="col col-1">
-            <a target="_blank" href="http://2017.drupalyug.ru/program/sessions/progressive-web-apps-kak-zamena-mobilnym-prilozheniyam">Presentation</a>
+            <a target="_blank" rel="noopener" href="http://2017.drupalyug.ru/program/sessions/progressive-web-apps-kak-zamena-mobilnym-prilozheniyam">Presentation</a>
         </div>
         <div class="col col-2">
-            <a target="_blank" href="https://github.com/kkomelin/pwa-demo">Github</a>
+            <a target="_blank" rel="noopener" href="https://github.com/kkomelin/pwa-demo">Github</a>
         </div>
     </footer>
 
