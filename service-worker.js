@@ -4,10 +4,10 @@
     var staticCacheName = 'pwa-demo-v1';
 
     var filesToCache = [
-        '.',
-        'styles/style.css',
-        'images/favicon.ico',
-        'images/offline.svg' // An offline replacement for the remote image.
+        './',
+        './styles/style.css',
+        './images/favicon.ico',
+        './images/offline.svg' // An offline replacement for the remote image.
     ];
 
     self.addEventListener('install', function(event) {
@@ -55,7 +55,7 @@
                 if (event.request.url.indexOf('2017.drupalyug.ru') > -1) {
                     return fetch(event.request).catch(function (reason) {
                         console.log('Replaced ', event.request.url, ' with the offline image from cache.');
-                        return caches.match('images/offline.svg');
+                        return caches.match('./images/offline.svg');
                     });
                 }
 
