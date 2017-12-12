@@ -4,5 +4,5 @@
     <path d="M50 120 Q 95 74 140 120" stroke="#111111" fill="transparent" stroke-width="17" />
 
     <text x="55" y="160" font-family="Verdana" font-size="200" fill="#ba2626" >!</text>
-    <text x="47" y="200" font-family="Verdana" font-size="28" fill="#ba2626" >Offline</text>
+    <text x="2" y="200" font-family="Verdana" font-size="28" fill="#ba2626" >You're Offline</text>
 </svg>
