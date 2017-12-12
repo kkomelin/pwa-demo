@@ -52,7 +52,7 @@
 
                 console.log('Trying to get ', event.request.url, ' from network.');
 
-                if (event.request.url.indexOf('2017.drupalyug.ru') > -1) {
+                if (event.request.url.indexOf('www.drupal.org') > -1) {
                     return fetch(event.request).catch(function (reason) {
                         console.log('Replaced ', event.request.url, ' with the offline image from cache.');
                         return caches.match('images/offline.svg');
