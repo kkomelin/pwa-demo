@@ -1,30 +1,49 @@
-
 (function() {
     'use strict';
 
-    var cacheName = 'pwa-demo-v1';
-    var offlineImageURI = 'offline.png';
+    var staticCacheName = 'pwa-demo-v1';
+
     var filesToCache = [
         '.',
         'index.html',
         'style.css',
         'favicon.ico',
-        offlineImageURI
+        'offline.png' // An offline replacement for the logo.
     ];
 
     self.addEventListener('install', function(event) {
+        console.log('Installing new service worker...');
+
+        // !!!
+        self.skipWaiting();
+
         event.waitUntil(
-            caches.open(cacheName).then(function(cache) {
+            caches.open(staticCacheName).then(function(cache) {
                 return cache.addAll(filesToCache);
             })
         );
     });
 
+    self.addEventListener('activate', function(event) {
+        console.log('Activating new service worker...');
+
+        var cacheWhitelist = [staticCacheName];
+
+        event.waitUntil(
+            caches.keys().then(function(cacheNames) {
+                return Promise.all(
+                    cacheNames.map(function(cacheName) {
+                        if (cacheWhitelist.indexOf(cacheName) === -1) {
+                            return caches.delete(cacheName);
+                        }
+                    })
+                );
+            })
+        );
+    });
+
     self.addEventListener('fetch', function(event) {
-
-        console.log('Fetch event for ', event.request.url);
-
-        var requestURL = new URL(event.request.url);
+        console.log('Trying to fetch the following url: ', event.request.url);
 
         event.respondWith(
             caches.match(event.request).then(function(response) {
@@ -33,8 +52,11 @@
                     return response;
                 }
 
-                if (requestURL.hostname === '2017.drupalyug.ru') {
-                    return caches.match(offlineImageURI);
+                if (event.request.url.indexOf('2017.drupalyug.ru') > -1) {
+                    return fetch(event.request).catch(function (reason) {
+                        console.log('Replaced ', event.request.url, ' with the offline image from cache.');
+                        return caches.match('offline.png');
+                    });
                 }
 
                 console.log('Network request for ', event.request.url);
