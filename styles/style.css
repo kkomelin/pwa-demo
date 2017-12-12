@@ -9,7 +9,11 @@ P {
     color: #333333;
 }
 a {
-    color: #333333;
+    color: #6a2e2e;
+    text-decoration: underline;
+}
+a:hover, a:focus {
+    text-decoration: none;
 }
 img {
     max-width: 100%;
