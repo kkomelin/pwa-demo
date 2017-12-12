@@ -14,7 +14,6 @@
     self.addEventListener('install', function(event) {
         console.log('Installing new service worker...');
 
-        // !!!
         self.skipWaiting();
 
         event.waitUntil(
@@ -43,7 +42,7 @@
     });
 
     self.addEventListener('fetch', function(event) {
-        console.log('Trying to fetch the following url: ', event.request.url);
+        console.log('Fetching the url: ', event.request.url);
 
         event.respondWith(
             caches.match(event.request).then(function(response) {
@@ -52,6 +51,8 @@
                     return response;
                 }
 
+                console.log('Trying to get ', event.request.url, ' from network.');
+
                 if (event.request.url.indexOf('2017.drupalyug.ru') > -1) {
                     return fetch(event.request).catch(function (reason) {
                         console.log('Replaced ', event.request.url, ' with the offline image from cache.');
@@ -59,7 +60,6 @@
                     });
                 }
 
-                console.log('Network request for ', event.request.url);
                 return fetch(event.request);
             })
         );
