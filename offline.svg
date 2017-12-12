@@ -1,0 +1,8 @@
+<svg width="190" height="260" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 80 Q 95 10 180 80" stroke="#111111" fill="transparent" stroke-width="17" />
+    <path d="M30 100 Q 95 42 160 100" stroke="#111111" fill="transparent" stroke-width="17" />
+    <path d="M50 120 Q 95 74 140 120" stroke="#111111" fill="transparent" stroke-width="17" />
+
+    <text x="55" y="160" font-family="Verdana" font-size="200" fill="#ba2626" >!</text>
+    <text x="47" y="200" font-family="Verdana" font-size="28" fill="#ba2626" >Offline</text>
+</svg>

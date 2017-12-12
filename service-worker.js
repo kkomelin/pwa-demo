@@ -8,7 +8,7 @@
         'index.html',
         'style.css',
         'favicon.ico',
-        'offline.png' // An offline replacement for the logo.
+        'offline.svg' // An offline replacement for the logo.
     ];
 
     self.addEventListener('install', function(event) {
@@ -56,7 +56,7 @@
                 if (event.request.url.indexOf('2017.drupalyug.ru') > -1) {
                     return fetch(event.request).catch(function (reason) {
                         console.log('Replaced ', event.request.url, ' with the offline image from cache.');
-                        return caches.match('offline.png');
+                        return caches.match('offline.svg');
                     });
                 }
 
