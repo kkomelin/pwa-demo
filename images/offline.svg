@@ -3,6 +3,8 @@
     <path d="M30 100 Q 95 42 160 100" stroke="#111111" fill="transparent" stroke-width="17" />
     <path d="M50 120 Q 95 74 140 120" stroke="#111111" fill="transparent" stroke-width="17" />
 
-    <text x="55" y="160" font-family="Verdana" font-size="200" fill="#ba2626" >!</text>
-    <text x="2" y="200" font-family="Verdana" font-size="28" fill="#ba2626" >You're Offline</text>
+    <line x1="95" y1="14" x2="95" y2="120" stroke="#ba2626" stroke-width="20" />
+    <circle cx="95" cy="145" r="15" fill="#ba2626" />
+
+    <text x="95" y="200" font-family="Sans-serif" font-size="25" fill="#ba2626" text-anchor="middle" alignment-baseline="top">You're Offline</text>
 </svg>
