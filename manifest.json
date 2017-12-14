@@ -1,7 +1,7 @@
 {
   "name": "PWA Demo for DrupalCamp Krasnodar 2017",
   "short_name": "PWA Demo",
-  "start_url": "./?utm_source=homescreen",
+  "start_url": "./?utm_source=app_manifest",
   "display": "standalone",
   "theme_color": "#1f2c79",
   "background_color": "#ffffff",
