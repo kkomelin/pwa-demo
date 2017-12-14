@@ -1,7 +1,7 @@
 # PWA Demo
 PWA Demo for DrupalCamp Krasnodar 2017
 
-You may look at the application in action here: [kkomelin.github.io/pwa-demo](https://kkomelin.github.io/pwa-demo/).
+You may look at the application in action here: [kkomelin.github.io/pwa-demo](https://kkomelin.github.io/pwa-demo/?utm_source=github).
 
 Briefly, what it can:
 
