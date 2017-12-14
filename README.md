@@ -1,5 +1,5 @@
 # PWA Demo
-PWA Demo for DrupalCamp Krasnodar 2017
+Progressive Web App demo for a [presentation](http://2017.drupalyug.ru/program/sessions/progressive-web-apps-kak-zamena-mobilnym-prilozheniyam) given at DrupalCamp Krasnodar 2017.
 
 You may look at the application in action here: [kkomelin.github.io/pwa-demo](https://kkomelin.github.io/pwa-demo/?utm_source=github).
 
