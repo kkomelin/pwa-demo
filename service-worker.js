@@ -1,7 +1,9 @@
 (function() {
     'use strict';
 
-    var staticCacheName = 'pwa-demo-v1';
+    var version = 1;
+
+    var staticCacheName = 'pwa-demo-v' + version;
 
     var filesToCache = [
         '.',
