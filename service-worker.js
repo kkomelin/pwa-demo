@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var version = 1;
+    var version = 2;
 
     var staticCacheName = 'pwa-demo-v' + version;
 
@@ -55,6 +55,10 @@
                 console.log('Trying to get ', event.request.url, ' from network.');
 
                 if (event.request.url.indexOf('www.drupal.org') > -1) {
+                    // Remove etag header to guarantee downloading the resource.
+                    var headers = new Headers(event.request.headers);
+                    headers.delete('etag');
+                    // Try to obtain image from network.
                     return fetch(event.request).catch(function (reason) {
                         console.log('Replaced ', event.request.url, ' with the offline image from cache.');
                         return caches.match('images/offline.svg');
