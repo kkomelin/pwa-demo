@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var version = 2;
+    var version = 3;
 
     var staticCacheName = 'pwa-demo-v' + version;
 
@@ -46,7 +46,9 @@
         console.log('Fetching the url: ', event.request.url);
 
         event.respondWith(
-            caches.match(event.request).then(function(response) {
+            // Use ignoreSearch:true to ignore query string while matching urls
+            // because we utilize ?utm_source=app_manifest in the app manifest.
+            caches.match(event.request, {ignoreSearch:true}).then(function(response) {
                 if (response) {
                     console.log('Found ', event.request.url, ' in cache.');
                     return response;
